@@ -1,0 +1,45 @@
+# Node.js
+node_modules/
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Nuxt.js
+.nuxt/
+dist/
+build/
+
+# Logs
+logs
+*.log
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+
+# Testing
+coverage/
+.cypress_cache/
+.cypress/
+
+# Storybook
+storybook-static/
+
+# Environment variables
+.env
+.env.*.local
+
+# Lockfiles
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# IDE specific files
+.vscode/
+.idea/
+*.swp
+
+# MacOS specific files
+.DS_Store
