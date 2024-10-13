@@ -26,16 +26,31 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
-          # No need to cache the pnpm.lock file if you want to ignore it
           cache: "pnpm"
 
-      # Install Dependencies without using pnpm.lock (removing --frozen-lockfile)
+      # Install Dependencies without using pnpm.lock
       - name: Install Dependencies
         run: pnpm install
 
       # Build the Application
       - name: Build Application
         run: pnpm build
+
+      # Start the Application
+      - name: Start Application
+        run: pnpm start &
+        # This runs the application in the background
+        # Make sure your start script supports running in the background
+        env:
+          PORT: 3000 # Set the port if needed
+
+      # Wait for the application to start
+      - name: Wait for Application
+        run: |
+          # Replace the URL and port with the correct address if necessary
+          while ! nc -z localhost 3000; do   
+            sleep 1 # wait for 1 second before checking again
+          done
 
       # Build Storybook
       - name: Build Storybook
