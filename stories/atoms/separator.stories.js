@@ -1,7 +1,7 @@
-import Divider from "../../components/atoms/divider.vue";
+import Divider from "../../components/atoms/AtomSeparator.vue";
 
 const meta = {
-  title: "Atoms/Divider",
+  title: "Atoms/Separator",
   tags: ["autodocs"],
   component: Divider,
   parameters: {

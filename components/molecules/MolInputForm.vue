@@ -27,8 +27,8 @@
 </template>
 
 <script>
-import InputField from "../atoms/input-field.vue";
-import Button from "../atoms/button.vue";
+import InputField from "../atoms/AtomInput.vue";
+import Button from "../atoms/AtomButton.vue";
 
 export default {
   name: "AuthForm",
@@ -43,7 +43,6 @@ export default {
   },
   computed: {
     isEmailValid() {
-      // Basic email validation regex pattern
       const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       return emailPattern.test(this.email);
     },

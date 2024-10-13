@@ -1,9 +1,9 @@
-import VerificationCard from "../../components/organisms/verification-card.vue";
+import VerificationCard from "../../components/organisms/OrgVerificationCard.vue";
 
 const placeholderLogo = "https://via.placeholder.com/96?text=Logo";
 
 const meta = {
-  title: "organisms/VerificationCard",
+  title: "organisms/Verification Card",
   tags: ["autodocs"],
   component: VerificationCard,
   argTypes: {

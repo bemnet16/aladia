@@ -2,7 +2,6 @@
   <div
     class="relative flex flex-col items-center max-w-sm rounded-md border border-white/10 bg-black/50 px-8 py-4"
   >
-    <!-- Background Gradient Border -->
     <div class="absolute inset-0 rounded-md pointer-events-none">
       <div
         class="bg-gradient-to-r from-transparent via-white to-transparent absolute top-0 left-0 h-[1px] w-full"
@@ -18,7 +17,6 @@
       ></div>
     </div>
 
-    <!-- Password Recovery Icon and Title (Hero Component) -->
     <Hero
       class="mb-6"
       title="Password Recovery"
@@ -26,20 +24,17 @@
     />
     <div class="mb-6 flex flex-col items-center px-6">
       <div class="flex justify-between w-full mb-24">
-        <!-- Email Sent Confirmation Message -->
         <p class="text-white text-sm mb-2">Recovery link sent to:</p>
         <p class="text-white/50 text-xs font-medium mb-6">
           {{ recoveryEmail }}
         </p>
       </div>
 
-      <!-- Instruction Text -->
       <p class="text-white/70 text-base text-center mb-32">
         Check your email to change your password!
       </p>
     </div>
 
-    <!-- Resend Email Button (Button Component) -->
     <Button
       class="relative flex h-10 w-full items-center justify-center overflow-hidden rounded-md border bg-black text-center text-sm transition-all"
       @click="sendEmailAgain"
@@ -50,8 +45,8 @@
   </div>
 </template>
 <script>
-import Button from "../atoms/button.vue";
-import Hero from "../molecules/hero.vue";
+import Button from "../atoms/AtomButton.vue";
+import Hero from "../molecules/MolSectionHero.vue";
 export default {
   name: "PasswordRecoveryConfirmation",
   components: {

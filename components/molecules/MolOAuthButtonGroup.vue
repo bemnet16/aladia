@@ -1,6 +1,6 @@
 <template>
   <Button
-    class="flex w-full items-center justify-center gap-4 rounded border border-white/20 py-1.5 shadow-[0px_3px_6px_#00000000] transition-all hover:bg-white/20 hover:shadow-[0px_3px_6px_#000000] active:scale-95"
+    class="flex w-full items-center justify-center gap-4 rounded border border-gray-100/30 py-1.5 shadow-[0px_3px_6px_#00000000] transition-all hover:bg-white/20 hover:shadow-[0px_3px_6px_#000000] active:scale-95"
     :type="'secondary'"
     @click="onClick"
   >
@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Button from "../atoms/button.vue";
+import Button from "../atoms/AtomButton.vue";
 export default {
   components: { Button },
   props: {

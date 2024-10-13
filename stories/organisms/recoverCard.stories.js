@@ -1,9 +1,9 @@
 import { ref, computed } from "vue";
 
-import PasswordRecoveryCard from "../../components/organisms/password-recovery-card.vue";
+import PasswordRecoveryCard from "../../components/organisms/OrgRecoveryCard.vue";
 
 const meta = {
-  title: "organisms/PasswordRecoveryCard",
+  title: "organisms/Recovery Card",
   tags: ["autodocs"],
   component: PasswordRecoveryCard,
   parameters: {

@@ -82,13 +82,13 @@
 
 <script>
 import { ref, computed } from "vue";
-import BackToLogin from "../molecules/back-to-login.vue";
-import InputField from "../atoms/input-field.vue";
-import Button from "../atoms/button.vue";
-import Hero from "../molecules/hero.vue";
-import AladiaLogo from "../../assets/img/aladia.png";
-import LockIcon from "../../assets/img/lock.svg";
-import MailIcon from "../../assets/img/mail.svg";
+import BackToLogin from "../molecules/MolReturBack.vue";
+import InputField from "../atoms/AtomInput.vue";
+import Button from "../atoms/AtomButton.vue";
+import Hero from "../molecules/MolSectionHero.vue";
+import AladiaLogo from "/public/images/aladia-logo.png";
+import LockIcon from "/public/images/lock.svg";
+import MailIcon from "/public/images/mail.svg";
 
 export default {
   name: "PasswordRecoveryCard",

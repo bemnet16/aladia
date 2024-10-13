@@ -1,7 +1,7 @@
-import PasswordRecoveryConfimationCard from "../../components/organisms/password-recovery-confirmation.vue";
+import PasswordRecoveryConfimationCard from "../../components/organisms/OrgConfirmation.vue";
 
 const meta = {
-  title: "organisms/PasswordRecoveryConfimationCard",
+  title: "organisms/Confimation Card",
   tags: ["autodocs"],
   component: PasswordRecoveryConfimationCard,
   argTypes: {

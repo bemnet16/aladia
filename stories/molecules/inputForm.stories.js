@@ -1,4 +1,4 @@
-import AuthForm from "../../components/molecules/auth-form.vue";
+import AuthForm from "../../components/molecules/MolInputForm.vue";
 import { ref } from "vue";
 
 const meta = {

@@ -1,21 +1,26 @@
-import Button from "../../components/atoms/button.vue";
+import Button from "../../components/atoms/AtomButton.vue";
 
 const meta = {
   title: "Atoms/Button",
   tags: ["autodocs"],
   component: Button,
   argTypes: {
-    type: {
+    variant: {
       control: { type: "select" },
-      options: ["primary", "secondary"],
-      description: "Button type that controls styling (primary or secondary)",
+      options: ["default", "primary", "destructive", "outline", "ghost"],
+      description: "Button variant that controls styling.",
+    },
+    size: {
+      control: { type: "select" },
+      options: ["sm", "md", "lg"],
+      description: "Button size variant.",
     },
   },
   parameters: {
     docs: {
       description: {
         component:
-          "A button component with dynamic styles based on the 'type' prop, and click event handling.",
+          "A button component with dynamic styles based on the 'variant' and 'size' props, and click event handling.",
       },
     },
   },
@@ -23,15 +28,16 @@ const meta = {
 
 export default meta;
 
-/** Default button with primary type */
-export const Primary = {
+/** Primary button */
+export const Default = {
   args: {
-    type: "primary",
+    variant: "default",
+    size: "md",
   },
   parameters: {
     docs: {
       storyDescription:
-        "This is the default primary button. It uses black as the background color with white text.",
+        "This is the primary button variant, which uses a black background with white text.",
     },
   },
   render: (args) => ({
@@ -39,19 +45,41 @@ export const Primary = {
     setup() {
       return { args };
     },
-    template: `<Button class="px-8 py-2" :type="args.type">Primary Button</Button>`,
+    template: `<Button :variant="args.variant" :size="args.size">Primary Button</Button>`,
   }),
 };
 
-/** Secondary button with different style */
-export const Secondary = {
+/** Default button */
+// export const Default = {
+//   args: {
+//     variant: "default",
+//     size: "md",
+//   },
+//   parameters: {
+//     docs: {
+//       storyDescription:
+//         "This is the default button variant with white background and black text.",
+//     },
+//   },
+//   render: (args) => ({
+//     components: { Button },
+//     setup() {
+//       return { args };
+//     },
+//     template: `<Button :variant="args.variant" :size="args.size">Default Button</Button>`,
+//   }),
+// };
+
+/** Destructive button */
+export const Destructive = {
   args: {
-    type: "secondary",
+    variant: "destructive",
+    size: "md",
   },
   parameters: {
     docs: {
       storyDescription:
-        "This is the secondary button variant, with white text on a transparent background and black text when hovered.",
+        "This is the destructive button variant, featuring a red background with white text.",
     },
   },
   render: (args) => ({
@@ -59,6 +87,88 @@ export const Secondary = {
     setup() {
       return { args };
     },
-    template: `<Button class="px-8 py-2" :type="args.type"><span class="text-black">Secondary Button</span></Button>`,
+    template: `<Button :variant="args.variant" :size="args.size">Destructive Button</Button>`,
+  }),
+};
+
+/** Outline button */
+export const Outline = {
+  args: {
+    variant: "outline",
+    size: "md",
+  },
+  parameters: {
+    docs: {
+      storyDescription:
+        "This is the outline button variant, which has a transparent background with a border and text color.",
+    },
+  },
+  render: (args) => ({
+    components: { Button },
+    setup() {
+      return { args };
+    },
+    template: `<Button :variant="args.variant" :size="args.size">Outline Button</Button>`,
+  }),
+};
+
+/** Ghost button */
+export const Ghost = {
+  args: {
+    variant: "ghost",
+    size: "md",
+  },
+  parameters: {
+    docs: {
+      storyDescription:
+        "This is the ghost button variant, featuring a transparent background and a hover effect that reveals color.",
+    },
+  },
+  render: (args) => ({
+    components: { Button },
+    setup() {
+      return { args };
+    },
+    template: `<Button :variant="args.variant" :size="args.size">Ghost Button</Button>`,
+  }),
+};
+
+/** Small button */
+export const Small = {
+  args: {
+    variant: "default",
+    size: "sm",
+  },
+  parameters: {
+    docs: {
+      storyDescription: "This is a small default button variant.",
+    },
+  },
+  render: (args) => ({
+    components: { Button },
+    setup() {
+      return { args };
+    },
+    template: `<Button :variant="args.variant" :size="args.size">Small Primary Button</Button>`,
+  }),
+};
+
+/** Large button */
+export const Large = {
+  args: {
+    variant: "primary",
+    size: "lg",
+  },
+  parameters: {
+    docs: {
+      storyDescription: "This is a large primary button variant.",
+    },
+  },
+  render: (args) => ({
+    components: { Button },
+    setup() {
+      return { args };
+    },
+    template: `<Button :variant="args.variant" :size="args.size">Large Primary Button</Button>`,
   }),
 };

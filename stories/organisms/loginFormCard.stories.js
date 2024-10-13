@@ -1,9 +1,9 @@
 import { ref } from "vue";
 
-import LoginPasswordCard from "../../components/organisms/login-password-card.vue";
+import LoginPasswordCard from "../../components/organisms/OrgPasswordCard.vue";
 
 const meta = {
-  title: "organisms/LoginPasswordCard",
+  title: "organisms/Login Card",
   tags: ["autodocs"],
   component: LoginPasswordCard,
   parameters: {

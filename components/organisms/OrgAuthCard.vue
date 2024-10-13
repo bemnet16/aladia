@@ -29,14 +29,14 @@
 </template>
 
 <script>
-import AuthForm from "../molecules/auth-form.vue";
-import SocialButton from "../molecules/social-button.vue";
-import Divider from "../atoms/divider.vue";
-import TermsAndConditions from "../molecules/terms-and-conditions.vue";
-import Hero from "../molecules/hero.vue";
-import GoogleLogo from "../../assets/img/google-logo.png";
-import AppleLogo from "../../assets/img/apple-logo.png";
-import FacebookLogo from "../../assets/img/facebook-logo.png";
+import AuthForm from "../molecules/MolInputForm.vue";
+import SocialButton from "../molecules/MolOAuthButtonGroup.vue";
+import Divider from "../atoms/AtomSeparator.vue";
+import TermsAndConditions from "../molecules/MolPolicy.vue";
+import Hero from "../molecules/MolSectionHero.vue";
+import GoogleLogo from "/public/images/google-logo.png";
+import AppleLogo from "/public/images/apple-logo.png";
+import FacebookLogo from "/public/images/facebook-logo.png";
 
 export default {
   components: {

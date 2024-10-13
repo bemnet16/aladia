@@ -16,12 +16,9 @@
         class="bg-gradient-to-t from-transparent via-white to-transparent absolute top-0 right-0 w-[1px] h-full"
       ></div>
     </div>
-    <!-- Header Section -->
     <BackToLogin class="mb-6" />
 
-    <!-- Form Section -->
     <div class="flex flex-col gap-4 mb-6">
-      <!-- Profile Upload Section -->
       <ProfileUpload v-model="profileImage" />
       <div class="flex flex-col gap-1 items-center">
         <TermsCheckbox v-model:checked="isChecked" />
@@ -67,7 +64,6 @@
       />
     </div>
 
-    <!-- Submit Button -->
     <Button
       :class="[
         'relative flex h-10 w-full mb-2 items-center justify-center overflow-hidden rounded-md border bg-black text-center text-sm transition-all',
@@ -85,12 +81,12 @@
 </template>
 
 <script>
-import BackToLogin from "../molecules/back-to-login.vue";
-import ProfileUpload from "../molecules/profile-upload.vue";
-import InputField from "../atoms/input-field.vue";
-import Button from "../atoms/button.vue";
-import TermsCheckbox from "../molecules/terms-checkbox.vue";
-import TermsAndConditions from "../molecules/terms-and-conditions.vue";
+import BackToLogin from "../molecules/MolReturBack.vue";
+import ProfileUpload from "../molecules/MolAddProfile.vue";
+import InputField from "../atoms/AtomInput.vue";
+import Button from "../atoms/AtomButton.vue";
+import TermsCheckbox from "../molecules/MolCheckbox.vue";
+import TermsAndConditions from "../molecules/MolPolicy.vue";
 
 export default {
   name: "RegistrationCard",

@@ -60,10 +60,10 @@
 </template>
 
 <script>
-import BackToLogin from "../molecules/back-to-login.vue";
-import InputField from "../atoms/input-field.vue";
-import Button from "../atoms/button.vue";
-import Hero from "../molecules/hero.vue";
+import BackToLogin from "../molecules/MolReturBack.vue";
+import InputField from "../atoms/AtomInput.vue";
+import Button from "../atoms/AtomButton.vue";
+import Hero from "../molecules/MolSectionHero.vue";
 
 export default {
   name: "LoginPasswordCard",

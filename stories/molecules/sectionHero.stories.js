@@ -1,7 +1,7 @@
-import Hero from "../../components/molecules/hero.vue";
+import Hero from "../../components/molecules/MolSectionHero.vue";
 
 const meta = {
-  title: "molecules/Hero",
+  title: "molecules/Hero Section",
   tags: ["autodocs"],
   component: Hero,
   argTypes: {

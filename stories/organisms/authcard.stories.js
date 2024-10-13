@@ -1,4 +1,4 @@
-import LoginCard from "../../components/organisms/login-card.vue";
+import LoginCard from "../../components/organisms/OrgAuthCard.vue";
 
 const meta = {
   title: "organisms/LoginCard",

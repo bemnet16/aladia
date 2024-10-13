@@ -1,4 +1,4 @@
-import InputField from "../../components/atoms/input-field.vue";
+import InputField from "../../components/atoms/AtomInput.vue";
 import { ref } from "vue";
 
 const meta = {

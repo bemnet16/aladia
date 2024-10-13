@@ -1,7 +1,7 @@
-import BackToLogin from "../../components/molecules/back-to-login.vue";
+import BackToLogin from "../../components/molecules/MolReturBack.vue";
 
 const meta = {
-  title: "molecules/BackToLogin",
+  title: "molecules/Return Back",
   tags: ["autodocs"],
   component: BackToLogin,
   parameters: {

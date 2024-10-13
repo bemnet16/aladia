@@ -17,7 +17,6 @@
       ></div>
     </div>
 
-    <!-- User Info section -->
     <div class="h-24 w-24 rounded">
       <img
         :src="logo"
@@ -27,16 +26,13 @@
     </div>
     <h2 class="text-white text-xl font-semibold">{{ userName }}</h2>
 
-    <!-- Welcome Text -->
     <p class="text-white/70 mt-4">Thanks for joining Aladia.</p>
 
-    <!-- Instruction Text -->
     <p class="text-white/70 text-center mt-8">
       Please enter below the 6-digit code we sent you through your registration
       e-mail:
     </p>
 
-    <!-- Code Input Fields -->
     <div class="flex justify-center gap-2 mt-16">
       <input
         v-for="(digit, index) in code"
@@ -50,10 +46,8 @@
       />
     </div>
 
-    <!-- Help Text -->
     <p class="text-white/70 text-xs mt-2">You didn't receive any mail?</p>
 
-    <!-- Submit Button -->
     <Button
       :class="[
         'relative flex h-10 w-full mt-16 mb-8 items-center justify-center overflow-hidden rounded-md border bg-black text-center text-sm transition-all',
@@ -67,8 +61,8 @@
 </template>
 
 <script>
-import defaultLogo from "../../assets/img/aladia.png";
-import Button from "../atoms/button.vue";
+import defaultLogo from "/public/images/aladia-logo.png";
+import Button from "../atoms/AtomButton.vue";
 
 export default {
   name: "VerificationCard",
@@ -103,7 +97,6 @@ export default {
       const codeString = this.code.join("");
       if (codeString.length === 6) {
         console.log("Submitted Code:", codeString);
-        // Handle submission logic here, e.g., call an API.
       } else {
         console.error("Please enter the complete 6-digit code.");
       }

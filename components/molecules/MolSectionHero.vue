@@ -19,18 +19,18 @@
 </template>
 
 <script>
-import AladiaLogo from "../../assets/img/aladia.png";
+import AladiaLogo from "/public/images/aladia-logo.png";
 
 export default {
   name: "Hero",
   props: {
     title: {
       type: String,
-      default: "Welcome to Aladia,", // Default title if none is provided
+      default: "Welcome to Aladia,",
     },
     subtitle: {
       type: String,
-      default: "Create or access your account from here", // Default subtitle if none is provided
+      default: "Create or access your account from here",
     },
   },
   setup() {

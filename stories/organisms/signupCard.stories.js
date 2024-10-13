@@ -1,9 +1,9 @@
 import { ref } from "vue";
 
-import RegistrationCard from "../../components/organisms/registration-card.vue";
+import RegistrationCard from "../../components/organisms/OrgSignupCard.vue";
 
 const meta = {
-  title: "organisms/RegistrationCard",
+  title: "organisms/Signup Card",
   tags: ["autodocs"],
   component: RegistrationCard,
   argTypes: {

@@ -36,7 +36,7 @@
 
 <script>
 import { ref, computed } from "vue";
-import AladiaLogo from "../../assets/img/aladia.png";
+import AladiaLogo from "/public/images/aladia-logo.png";
 
 export default {
   name: "ProfileUpload",
@@ -71,7 +71,6 @@ export default {
     };
 
     const triggerFileInput = (event) => {
-      // Prevent triggering the input when clicking on the file input itself
       if (event.target !== fileInput.value) {
         fileInput.value.click();
       }

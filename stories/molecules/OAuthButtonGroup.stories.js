@@ -1,9 +1,9 @@
-import SocialButton from "../../components/molecules/social-button.vue";
+import MolOAuthButtonGroup from "../../components/molecules/MolOAuthButtonGroup.vue";
 
 const meta = {
-  title: "molecules/SocialButton",
+  title: "molecules/OAuthButtonGroup",
   tags: ["autodocs"],
-  component: SocialButton,
+  component: MolOAuthButtonGroup,
   argTypes: {
     iconSrc: {
       control: "text",
@@ -27,7 +27,7 @@ const meta = {
 export default meta;
 export const Default = {
   args: {
-    iconSrc: "../../assets/img/google-logo.png",
+    iconSrc: "/public/images/google-logo.png",
     label: "Default Button",
   },
   parameters: {
@@ -37,17 +37,17 @@ export const Default = {
     },
   },
   render: (args) => ({
-    components: { SocialButton },
+    components: { MolOAuthButtonGroup },
     setup() {
       return { args };
     },
-    template: `<SocialButton class="bg-black max-w-sm" :iconSrc="args.iconSrc" :label="args.label" @click="args.onClick" />`,
+    template: `<MolOAuthButtonGroup class="bg-black max-w-sm" :iconSrc="args.iconSrc" :label="args.label" @click="args.onClick" />`,
   }),
 };
 
 export const AppleButton = {
   args: {
-    iconSrc: "../../assets/img/google-logo.png",
+    iconSrc: "/public/images/apple-logo.png",
     label: "Sign in with Apple",
   },
   parameters: {
@@ -57,17 +57,17 @@ export const AppleButton = {
     },
   },
   render: (args) => ({
-    components: { SocialButton },
+    components: { MolOAuthButtonGroup },
     setup() {
       return { args };
     },
-    template: `<SocialButton  class="bg-black max-w-sm" :iconSrc="args.iconSrc" :label="args.label" @click="args.onClick" />`,
+    template: `<MolOAuthButtonGroup  class="bg-black max-w-sm" :iconSrc="args.iconSrc" :label="args.label" @click="args.onClick" />`,
   }),
 };
 
 export const FacebookButton = {
   args: {
-    iconSrc: "../../assets/img/apple-logo.png",
+    iconSrc: "/public/images/facebook-logo.png",
     label: "Continue with Facebook",
   },
   parameters: {
@@ -77,17 +77,17 @@ export const FacebookButton = {
     },
   },
   render: (args) => ({
-    components: { SocialButton },
+    components: { MolOAuthButtonGroup },
     setup() {
       return { args };
     },
-    template: `<SocialButton  class="bg-black max-w-sm" :iconSrc="args.iconSrc" :label="args.label" @click="args.onClick" />`,
+    template: `<MolOAuthButtonGroup  class="bg-black max-w-sm" :iconSrc="args.iconSrc" :label="args.label" @click="args.onClick" />`,
   }),
 };
 
 export const GoogleButton = {
   args: {
-    iconSrc: "../../assets/img/google-logo.png",
+    iconSrc: "/public/images/google-logo.png",
     label: "Sign in with Google",
   },
   parameters: {
@@ -97,10 +97,10 @@ export const GoogleButton = {
     },
   },
   render: (args) => ({
-    components: { SocialButton },
+    components: { MolOAuthButtonGroup },
     setup() {
       return { args };
     },
-    template: `<SocialButton class="bg-black max-w-sm" :iconSrc="args.iconSrc" :label="args.label" @click="args.onClick" />`,
+    template: `<MolOAuthButtonGroup class="bg-black max-w-sm" :iconSrc="args.iconSrc" :label="args.label" @click="args.onClick" />`,
   }),
 };
