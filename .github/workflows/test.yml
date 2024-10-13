@@ -65,12 +65,9 @@ jobs:
       # Run Cypress integrated with Chromatic
       - name: Run Cypress with Chromatic
         run: ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 npx chromatic --cypress --project-token="chpt_6d9f6d87b448ff0" --exit-zero-on-changes
+        env:
+          CYPRESS_RECORD_KEY: "chpt_6d9f6d87b448ff0"
 
       # Optional: Separate Cypress functional tests
       - name: Run Cypress Tests
-        uses: cypress-io/github-action@v5
-        with:
-          browser: chrome
-          headless: true
-        env:
-          CYPRESS_RECORD_KEY: "chpt_6d9f6d87b448ff0"
+        run: pnpm test:cypress
