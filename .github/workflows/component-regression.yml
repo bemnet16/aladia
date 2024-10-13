@@ -1,12 +1,12 @@
-name: Test
+name: Component Visual Regression Test
 on:
   pull_request:
     branches:
       - main
 
 jobs:
-  test:
-    name: Test
+  component_visual_regression:
+    name: component_visual_regression
     runs-on: ubuntu-latest
 
     steps:
@@ -31,26 +31,10 @@ jobs:
       - name: Build Application
         run: pnpm build
 
-      - name: Start Application
-        run: pnpm start &
-        env:
-          PORT: 3000
-      - name: Wait for Application
-        run: |
-          # Replace the URL and port with the correct address if necessary
-          while ! nc -z localhost 3000; do   
-            sleep 1 # wait for 1 second before checking again
-          done
-
       - name: Build Storybook
         run: pnpm build-storybook
 
-      - name: Run Chromatic
+      - name: Run Chromatic for Component Visual Regression
         uses: chromaui/action@latest
         with:
           projectToken: "chpt_6d9f6d87b448ff0"
-
-      - name: Run Cypress with Chromatic
-        run: ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 npx chromatic --cypress --project-token="chpt_19cfd96b7371934" --exit-zero-on-changes
-        env:
-          CYPRESS_RECORD_KEY: "chpt_19cfd96b7371934"
