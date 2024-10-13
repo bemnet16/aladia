@@ -10,41 +10,31 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      # Checkout the repository
       - name: Checkout Repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
-      # Install pnpm
       - name: Install pnpm
         run: |
           npm install -g pnpm
 
-      # Set up Node.js without caching dependencies using pnpm.lock
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "22"
           cache: "pnpm"
 
-      # Install Dependencies without using pnpm.lock
       - name: Install Dependencies
         run: pnpm install
 
-      # Build the Application
       - name: Build Application
         run: pnpm build
 
-      # Start the Application
       - name: Start Application
         run: pnpm start &
-        # This runs the application in the background
-        # Make sure your start script supports running in the background
         env:
-          PORT: 3000 # Set the port if needed
-
-      # Wait for the application to start
+          PORT: 3000
       - name: Wait for Application
         run: |
           # Replace the URL and port with the correct address if necessary
@@ -52,22 +42,15 @@ jobs:
             sleep 1 # wait for 1 second before checking again
           done
 
-      # Build Storybook
       - name: Build Storybook
         run: pnpm build-storybook
 
-      # Run Chromatic for visual regression testing
       - name: Run Chromatic
         uses: chromaui/action@latest
         with:
           projectToken: "chpt_6d9f6d87b448ff0"
 
-      # Run Cypress integrated with Chromatic
       - name: Run Cypress with Chromatic
-        run: ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 npx chromatic --cypress --project-token="chpt_6d9f6d87b448ff0" --exit-zero-on-changes
+        run: ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 npx chromatic --cypress --project-token="chpt_19cfd96b7371934" --exit-zero-on-changes
         env:
-          CYPRESS_RECORD_KEY: "chpt_6d9f6d87b448ff0"
-
-      # Optional: Separate Cypress functional tests
-      - name: Run Cypress Tests
-        run: pnpm test:cypress
+          CYPRESS_RECORD_KEY: "chpt_19cfd96b7371934"
