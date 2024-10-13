@@ -1,4 +1,4 @@
-describe("Check if server is live", () => {
+describe("The server is live", () => {
   it("server is live", () => {
     cy.visit("http://localhost:3000");
   });
@@ -14,7 +14,7 @@ describe("Check if server is live", () => {
   });
 
   /* ==== Test Created with Cypress Studio ==== */
-  it("register new user (in memory database)", function () {
+  it("signup new user", function () {
     /* ==== Generated with Cypress Studio ==== */
     cy.visit("localhost:3000");
     cy.get("#email-field").clear("new");
