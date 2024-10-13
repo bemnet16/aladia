@@ -10,33 +10,52 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      # Checkout the repository
       - name: Checkout Repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0
 
+      # Install pnpm
+      - name: Install pnpm
+        run: |
+          npm install -g pnpm
+
+      # Set up Node.js without caching dependencies using pnpm.lock
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+          # No need to cache the pnpm.lock file if you want to ignore it
           cache: "pnpm"
-          cache-dependency-path: |
-            pnpm.lock
-      - name: Install Dependencies
-        run: pnpm install --frozen-lockfile
 
+      # Install Dependencies without using pnpm.lock (removing --frozen-lockfile)
+      - name: Install Dependencies
+        run: pnpm install
+
+      # Build the Application
       - name: Build Application
         run: pnpm build
 
+      # Build Storybook
       - name: Build Storybook
         run: pnpm build-storybook
 
+      # Run Chromatic for visual regression testing
       - name: Run Chromatic
         uses: chromaui/action@latest
         with:
           projectToken: "chpt_6d9f6d87b448ff0"
 
+      # Run Cypress integrated with Chromatic
       - name: Run Cypress with Chromatic
-        run: ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 npx chromatic --cypress --project-token=$CHROMATIC_PROJECT_TOKEN --exit-zero-on-changes
+        run: ELECTRON_EXTRA_LAUNCH_ARGS=--remote-debugging-port=9222 npx chromatic --cypress --project-token="chpt_6d9f6d87b448ff0" --exit-zero-on-changes
+
+      # Optional: Separate Cypress functional tests
+      - name: Run Cypress Tests
+        uses: cypress-io/github-action@v5
+        with:
+          browser: chrome
+          headless: true
         env:
-          CHROMATIC_PROJECT_TOKEN: "chpt_6d9f6d87b448ff0"
+          CYPRESS_RECORD_KEY: "chpt_6d9f6d87b448ff0"
