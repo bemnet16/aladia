@@ -12,7 +12,7 @@
     "storybook": "storybook dev --port 6006",
     "build-storybook": "storybook build",
     "test:e2e": "cypress open --config-file=cypress.config.js",
-    "test": "pnpm test:e2e",
+    "test": "pnpm cypress run",
     "chromatic": "npx chromatic --project-token=chpt_6d9f6d87b448ff0"
   },
   "dependencies": {
